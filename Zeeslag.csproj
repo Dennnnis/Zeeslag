@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4C2D633F-B58D-493D-A662-487908633282}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Zeeslag</RootNamespace>
+    <AssemblyName>Zeeslag</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Board.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Board.Designer.cs">
+      <DependentUpon>Board.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Connection.cs" />
+    <Compile Include="Designer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Designer.Designer.cs">
+      <DependentUpon>Designer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Global.cs" />
+    <Compile Include="Grid.cs" />
+    <Compile Include="NetworkHelper.cs" />
+    <Compile Include="Popup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popup.Designer.cs">
+      <DependentUpon>Popup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Cell.cs" />
+    <Compile Include="Setup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Setup.Designer.cs">
+      <DependentUpon>Setup.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Board.resx">
+      <DependentUpon>Board.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designer.resx">
+      <DependentUpon>Designer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popup.resx">
+      <DependentUpon>Popup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Setup.resx">
+      <DependentUpon>Setup.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ArrowDown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ArrowLeft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ArrowRight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ArrowTop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BadSelection.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rotate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ShipBodyRight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Selection.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BackgroundField.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ShipVB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ShipVC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ShipSF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ShipSB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ShipSC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ShipTC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ShipTF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ShipTB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ShipPB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ShipPF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ShipVF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Miss.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hit.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
