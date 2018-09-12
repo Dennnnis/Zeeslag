@@ -79,6 +79,7 @@
     <Compile Include="Setup.Designer.cs">
       <DependentUpon>Setup.cs</DependentUpon>
     </Compile>
+    <Compile Include="Sounds.cs" />
     <EmbeddedResource Include="Board.resx">
       <DependentUpon>Board.cs</DependentUpon>
     </EmbeddedResource>
@@ -182,6 +183,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Hit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hit4.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hit3.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hit2.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hit1.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\miss1.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\miss2.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\miss3.wav" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

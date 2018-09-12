@@ -312,6 +312,8 @@ namespace Zeeslag
             enemyGrid[x, y] = c;
             enemyGrid[x, y].hidden = true;
 
+            if (c.hit) Sounds.Hit(); else Sounds.Miss();
+
             if (destroyed)
             {
                 for (int iy = 0; iy < enemyGrid.GetLength(1); iy++)
