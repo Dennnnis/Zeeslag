@@ -24,9 +24,9 @@ namespace Zeeslag
 
         //Counters
         private const int ConstVliegdekschipCount    = 1;
-        private const int ConstSlagschipCount        = 2;
-        private const int ConstTorpedobootjagerCount = 3;
-        private const int ConstPatrouilleschipCount  = 4;
+        private const int ConstSlagschipCount        = 0;
+        private const int ConstTorpedobootjagerCount = 0;
+        private const int ConstPatrouilleschipCount  = 0;
 
         private int vliegdekschipCount    = ConstVliegdekschipCount;
         private int slagschipCount        = ConstSlagschipCount;
@@ -85,6 +85,16 @@ namespace Zeeslag
         {
             if (selectionReady)
             {
+
+                if (selectionX < 0) selectionX = 0;
+                if (selectionY < 0) selectionY = 0;
+
+                if (selectionX > (gridW-1) - (Convert.ToInt32(selectionRight)  * (Cell.GetLength(selectionShip)-1)))
+                    selectionX = (gridW-1) - (Convert.ToInt32(selectionRight)  * (Cell.GetLength(selectionShip)-1));
+                if (selectionY > (gridH-1) - (Convert.ToInt32(!selectionRight) * (Cell.GetLength(selectionShip)-1)))
+                    selectionY = (gridH-1) - (Convert.ToInt32(!selectionRight) * (Cell.GetLength(selectionShip)-1));
+
+
                 selectionGood = true;
                 Grid.Draw(visualGrid, grid);
                 if (!Grid.CheckSelection(visualGrid,grid, selectionX, selectionY, selectionRight, selectionShip)) selectionGood = false;

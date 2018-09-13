@@ -13,6 +13,14 @@ namespace Zeeslag
 {
     public partial class Board : Form
     {
+        //Window
+        Point layout1 = new Point(12,455);
+        Point layout2 = new Point(418,49);
+        Size layout1Size = new Size(443,909);
+        Size layout2Size = new Size(850,499);
+
+        int layout = 1;
+
         //Text
         string[] turnText = { "Tegenstander is aan de beurt..", "Jij bent aan de beurt!" };
         Popup pop;
@@ -181,6 +189,7 @@ namespace Zeeslag
             {
                 Console.WriteLine(ex.Message);
                 MessageBox.Show("Kan geen berichten ontvangen van andere speler!", "Error");
+                Close();
             }
 
             Console.WriteLine("Thread has closed"); 
@@ -329,6 +338,30 @@ namespace Zeeslag
                 ShowMessageNonBlocking($"{Cell.GetName(c.shipCode)} van je vijand is gezonken!"); 
             }
             RefreshVisual();
+        }
+
+        private void RotateSceen_Click(object sender, EventArgs e)
+        {
+            layout = layout == 1 ? 0 : 1;
+
+            if (layout == 1)
+            {
+                MyPanel.Location = layout1;
+                Size = layout1Size;
+            }
+            else
+            {
+                MyPanel.Location = layout2;
+                Size = layout2Size;
+            }
+        }
+
+        private void ClosedForm(object sender, FormClosingEventArgs e)
+        {
+            if (receivingThread.IsAlive)
+            {
+                receivingThread.Abort();
+            }
         }
     }
 }
