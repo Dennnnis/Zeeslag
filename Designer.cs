@@ -24,9 +24,9 @@ namespace Zeeslag
 
         //Counters
         private const int ConstVliegdekschipCount    = 1;
-        private const int ConstSlagschipCount        = 0;
-        private const int ConstTorpedobootjagerCount = 0;
-        private const int ConstPatrouilleschipCount  = 0;
+        private const int ConstSlagschipCount        = 2;
+        private const int ConstTorpedobootjagerCount = 3;
+        private const int ConstPatrouilleschipCount  = 4;
 
         private int vliegdekschipCount    = ConstVliegdekschipCount;
         private int slagschipCount        = ConstSlagschipCount;
